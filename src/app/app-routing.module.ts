@@ -13,6 +13,10 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
+import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import { CategoryService } from './category.service';
+import { ProductService } from './product.service';
+
 
 
 const routes: Routes = [
@@ -26,6 +30,8 @@ const routes: Routes = [
   {path:"order-success", component: OrderSuccessComponent, canActivate: [AuthGuard]},
 
   {path:"admin/products", component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard]},
+  {path:"admin/products/new", component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard]},
+  {path:"admin/products/:id", component: ProductFormComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   {path:"admin/orders", component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   
 
@@ -34,6 +40,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard, UserService, AdminAuthGuard ]
+  providers: [AuthService, AuthGuard, UserService, AdminAuthGuard, CategoryService, ProductService ]
 })
 export class AppRoutingModule { }
