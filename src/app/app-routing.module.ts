@@ -8,6 +8,7 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { UserService } from './user.service';
 
 
 const routes: Routes = [
@@ -25,6 +26,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthService, AuthGuard, UserService ]
 })
 export class AppRoutingModule { }
