@@ -9,6 +9,10 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { UserService } from './user.service';
+import { AdminAuthGuard } from './admin-auth-guard.service';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
+import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
+import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 
 
 const routes: Routes = [
@@ -19,6 +23,10 @@ const routes: Routes = [
 
   {path:"my-orders", component: MyOrdersComponent, canActivate: [AuthGuard]},
   {path:"check-out", component: CheckOutComponent, canActivate: [AuthGuard]},
+  {path:"order-success", component: OrderSuccessComponent, canActivate: [AuthGuard]},
+
+  {path:"admin/products", component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard]},
+  {path:"admin/orders", component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard]},
   
 
 ];
@@ -26,6 +34,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard, UserService ]
+  providers: [AuthService, AuthGuard, UserService, AdminAuthGuard ]
 })
 export class AppRoutingModule { }
