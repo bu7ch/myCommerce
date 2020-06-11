@@ -16,6 +16,9 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
+import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MyOrdersComponent,
     ProductsComponent,
     ShoppingCartComponent,
-    NavbarComponent
+    NavbarComponent,
+    OrderSuccessComponent,
+    AdminOrdersComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
