@@ -10,9 +10,8 @@ export class AdminProductsComponent implements OnInit {
 products$
   constructor(private ProdService: ProductService) {
     this.products$ = this.ProdService.getAll();
-    console.log(this.products$);
-    
    }
+   
 
   ngOnInit(): void {
   }
