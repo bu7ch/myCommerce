@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-// import { DataTableModule } from 'angular-data-table';
 import { FormsModule } from '@angular/forms';
+// import { DataTableModule } from 'angular-9-datable';
 
 import { environment } from 'src/environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,8 +41,8 @@ import { ProductFormComponent } from './components/admin/product-form/product-fo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // DataTableModule,
     FormsModule,
+    // DataTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
