@@ -20,7 +20,7 @@ import { ProductService } from './product.service';
 
 
 const routes: Routes = [
-  {path:"", pathMatch:"full", component: HomeComponent},
+  {path:"", pathMatch:"full", component: ProductsComponent},
   {path:"products", component: ProductsComponent},
   {path:"login", component: LoginComponent},
   {path:"shopping-cart", component: ShoppingCartComponent},
