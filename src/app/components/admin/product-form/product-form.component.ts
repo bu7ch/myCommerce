@@ -11,7 +11,7 @@ import { take } from 'rxjs/operators';
 })
 export class ProductFormComponent implements OnInit  {
   categories$;
-  product = {};
+  product;
   id;
 
   constructor(
@@ -21,11 +21,13 @@ export class ProductFormComponent implements OnInit  {
     private route: ActivatedRoute
   ) {
     this.categories$ = categoryService.getCategories();
+
     this.id = this.route.snapshot.paramMap.get('id');
     if(this.id) this.productService.getProduct(this.id).pipe(take(1)).subscribe(p => this.product = p);  }
 
   save(product){
     if(this.id) this.productService.create(product);
+    this.router.navigate(['/admin/products']);
   }
   ngOnInit(): void {
   }

@@ -5,7 +5,7 @@
         <div class="form-group">
           <label for="title">Title</label>
           <input
-             #title ="ngModel" ngModel
+             #title ="ngModel" [(ngModel)]="product['title']"
             name="title"
             id="title"
             type="text"
@@ -19,7 +19,7 @@
               <span class="input-group-text">€</span>
             </div>
             <input
-              #price="ngModel" ngModel
+              #price="ngModel" [(ngModel)]="product['price']"
               name="price"
               id="price"
               type="number"
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label for="category">Category</label>
-          <select #category="ngModel" ngModel name="category" id="category" class="form-control">
+          <select #category="ngModel" [(ngModel)]="product['category']" name="category" id="category" class="form-control">
             <option *ngFor="let c of categories$ | async" [value]="c.key">
               {{ c.payload.val().name }}
             </option>
@@ -39,7 +39,7 @@
         <div class="form-group">
           <label for="imageUrl">Image URL</label>
           <input
-            #imageUrl="ngModel" ngModel
+            #imageUrl="ngModel" [(ngModel)]="product['imageUrl']"
             name="imageUrl"
             id="imageUrl"
             type="URL"
@@ -51,10 +51,10 @@
     </div>
     <div class="col-md-6">
       <div class="card" style="width:20rem;">
-        <img [src]="imageUrl.value" alt="" class="card-img-top">
+        <img [src]="product.imageUrl" alt="" class="card-img-top">
         <div class="card-body">
-          <h4 class="card-title">{{title.value}}</h4>
-            <p class="card-text">{{price.value | currency:"EUR":true}}</p>
+          <h4 class="card-title">{{product.title}}</h4>
+            <p class="card-text">{{product.price | currency:"EUR":true}}</p>
         </div>
       </div>
     </div>
