@@ -14,11 +14,10 @@ categories$: any;
   constructor(productService: ProductService, categoryService: CategoryService) { 
     this.products$ = productService.getAll().subscribe(product => this.products$ =product);
     this.categories$ = categoryService.getCategories().subscribe(category => this.categories$ = category);
-    
-   
-    
   }
-
+//TODO: Add Filtre par Categorie
+//TODO: Extraire le filtre dans un composant
+//TODO: Ajouter du style au Hover
   ngOnInit(): void {
   }
 
