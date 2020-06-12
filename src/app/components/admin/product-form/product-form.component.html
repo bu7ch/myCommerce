@@ -50,8 +50,8 @@
       </form>
     </div>
     <div class="col-md-6">
-      <div class="card" style="width:20rem;">
-        <img [src]="product.imageUrl" alt="" class="card-img-top">
+      <div class="card"  *ngIf="product.title" style="width:20rem;">
+        <img [src]="product.imageUrl" *ngIf="product.imageUrl" alt="" class="card-img-top">
         <div class="card-body">
           <h4 class="card-title">{{product.title}}</h4>
             <p class="card-text">{{product.price | currency:"EUR":true}}</p>
